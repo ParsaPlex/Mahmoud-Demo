@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
 
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Raman Network</title>
 
-<title>Raman Network | Network Infrastructure</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.155.0/three.min.js"></script>
@@ -25,8 +23,7 @@
 <canvas id="bg-canvas"></canvas>
 
 <header class="header">
-
-<nav class="nav container">
+<div class="container nav">
 
 <div class="logo">
 RAMAN<span>NETWORK</span>
@@ -34,168 +31,113 @@ RAMAN<span>NETWORK</span>
 
 <ul class="nav-links">
 <li><a href="#services">Services</a></li>
-<li><a href="#about">Solutions</a></li>
+<li><a href="#solutions">Solutions</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
 
-<div class="nav-actions">
-
-<button id="theme-toggle" class="theme-toggle">
-
-<span class="sun">
-<svg viewBox="0 0 24 24">
-<circle cx="12" cy="12" r="5"></circle>
-</svg>
-</span>
-
-<span class="moon">
-<svg viewBox="0 0 24 24">
-<path d="M21 12.79A9 9 0 0111.21 3
-7 7 0 0012 21a9 9 0 009-8.21z"></path>
-</svg>
-</span>
-
-</button>
+<button id="theme-toggle" class="theme-toggle">☀️</button>
 
 </div>
-
-</nav>
 </header>
+
 
 <main>
 
 <section class="hero container">
 
-<div class="hero-content">
-
-<h1 class="reveal-text">
-Enterprise<br>
-<span class="accent-text">Network Infrastructure</span>
+<div class="hero-left">
+<h1>
+Enterprise Grade  
+<span>Network Infrastructure</span>
 </h1>
 
-<p class="fade-up">
-Advanced server deployment, secure network design and professional connectivity solutions for modern businesses.
+<p>
+Professional server deployment, secure branch connectivity and scalable network architecture for modern organizations.
 </p>
 
-<div class="hero-btns fade-up">
-<a href="#services" class="btn-main">Explore Services</a>
+<div class="hero-buttons">
+<a href="#services" class="primary-btn">Explore Services</a>
+<a href="#solutions" class="secondary-btn">View Solutions</a>
+</div>
 </div>
 
-<div class="hero-services">
-
-<div class="hero-service">⚡ Server Deployment</div>
-<div class="hero-service">🧩 Network Design</div>
-<div class="hero-service">🌐 Branch VPN</div>
-<div class="hero-service">📦 Hardware Consulting</div>
-
-</div>
-
+<div class="hero-visual">
+<div class="network-orb"></div>
 </div>
 
 </section>
 
+
+
 <section id="services" class="services container">
 
-<div class="section-header">
-<h2 class="reveal-text">Professional Network Services</h2>
-<p>Enterprise infrastructure solutions</p>
-</div>
+<h2>Core Services</h2>
 
 <div class="services-grid">
 
-<div class="service-card">
-<div class="card-icon">🔧</div>
-<h3>Server Setup & Configuration</h3>
+<div class="service-box">
+<h3>Server Deployment</h3>
 <p>
-Installation of Windows Server and Linux,
-Active Directory deployment,
-DNS and DHCP configuration,
-RAID setup and monitoring.
+Installation and configuration of Windows Server and Linux infrastructure including Active Directory, DNS, DHCP and storage systems.
 </p>
 </div>
 
-<div class="service-card">
-<div class="card-icon">📦</div>
-<h3>Network Hardware Consulting</h3>
+<div class="service-box">
+<h3>Hardware Consulting</h3>
 <p>
-Infrastructure analysis,
-equipment comparison between
-Cisco, MikroTik and Ubiquiti,
-and optimized procurement planning.
+Professional consulting for selecting enterprise network hardware including MikroTik, Cisco and Ubiquiti equipment.
 </p>
 </div>
 
-<div class="service-card">
-<div class="card-icon">🧩</div>
-<h3>Internal Network Design</h3>
+<div class="service-box">
+<h3>Network Design</h3>
 <p>
-Advanced topology design
-Star, Mesh and Hybrid networks,
-structured cabling,
-rack installation and maintenance.
+Design of scalable network architectures including VLAN segmentation, routing design and professional rack installation.
 </p>
 </div>
 
-<div class="service-card">
-<div class="card-icon">🌐</div>
+<div class="service-box">
 <h3>Branch Connectivity</h3>
 <p>
-Secure communication between offices
-using Site‑to‑Site VPN,
-MPLS architecture,
-IPsec and L2TP protocols.
+Secure office‑to‑office connectivity with Site‑to‑Site VPN, MPLS integration and encrypted tunnels.
 </p>
 </div>
 
 </div>
+</section>
+
+
+
+<section id="solutions" class="solutions container">
+
+<h2>Infrastructure Solutions</h2>
+
+<div class="solutions-grid">
+<div class="solution-card">Enterprise Server Systems</div>
+<div class="solution-card">Secure Network Architecture</div>
+<div class="solution-card">High Availability Design</div>
+<div class="solution-card">Infrastructure Monitoring</div>
+</div>
+
+</section>
+
+
+
+<section class="cta container">
+
+<h2>Build a Reliable Network Infrastructure</h2>
+<p>Modern businesses require stable, secure and scalable network foundations.</p>
+<a class="primary-btn">Start Your Project</a>
 
 </section>
 
 </main>
 
+
 <footer class="footer">
-
-<div class="container footer-grid">
-
-<div class="footer-brand">
-<h3>RAMAN NETWORK</h3>
-<p>
-Enterprise network infrastructure,
-server deployment and secure connectivity solutions.
-</p>
-</div>
-
-<div class="footer-links">
-<h4>Services</h4>
-<a href="#">Server Deployment</a>
-<a href="#">Network Design</a>
-<a href="#">VPN Connectivity</a>
-<a href="#">Hardware Consulting</a>
-</div>
-
-<div class="footer-links">
-<h4>Company</h4>
-<a href="#">About</a>
-<a href="#">Projects</a>
-<a href="#">Contact</a>
-</div>
-
-<div class="footer-contact">
-<h4>Contact</h4>
-<p>Email: info@ramannetwork.com</p>
-<p>Infrastructure Solutions</p>
-</div>
-
-</div>
-
-<div class="footer-bottom">
-<p>© 2026 Raman Network</p>
-<p>Designed and coded by ParsaPlex</p>
-</div>
-
+Designed and coded by ParsaPlex
 </footer>
 
 <script src="main.js"></script>
-
 </body>
 </html>
