@@ -1,84 +1,102 @@
-// 1. Three.js Background (Interactive Network)
-const canvas = document.querySelector('#bg-canvas');
-const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+const canvas=document.querySelector('#bg-canvas')
 
-renderer.setSize(window.innerWidth, window.innerHeight);
-renderer.setPixelRatio(window.devicePixelRatio);
+const scene=new THREE.Scene()
 
-const particlesGeometry = new THREE.BufferGeometry();
-const particlesCount = 2000;
-const posArray = new Float32Array(particlesCount * 3);
+const camera=new THREE.PerspectiveCamera(
+75,
+window.innerWidth/window.innerHeight,
+0.1,
+1000
+)
 
-for(let i = 0; i < particlesCount * 3; i++) {
-    posArray[i] = (Math.random() - 0.5) * 10;
+const renderer=new THREE.WebGLRenderer({
+canvas,
+alpha:true
+})
+
+renderer.setSize(window.innerWidth,window.innerHeight)
+
+const particlesGeometry=new THREE.BufferGeometry()
+
+const particlesCount=2000
+
+const posArray=new Float32Array(particlesCount*3)
+
+for(let i=0;i<particlesCount*3;i++){
+posArray[i]=(Math.random()-0.5)*10
 }
 
-particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
-const material = new THREE.PointsMaterial({ size: 0.005, color: 0xe3a617 });
-const particlesMesh = new THREE.Points(particlesGeometry, material);
-scene.add(particlesMesh);
+particlesGeometry.setAttribute(
+'position',
+new THREE.BufferAttribute(posArray,3)
+)
 
-camera.position.z = 3;
+const material=new THREE.PointsMaterial({
+size:0.005,
+color:0xe3a617
+})
 
-// Mouse movement effect on particles
-let mouseX = 0;
-let mouseY = 0;
-document.addEventListener('mousemove', (event) => {
-    mouseX = event.clientX;
-    mouseY = event.clientY;
-});
+const particlesMesh=new THREE.Points(
+particlesGeometry,
+material
+)
 
-function animate() {
-    requestAnimationFrame(animate);
-    particlesMesh.rotation.y += 0.001;
-    if (mouseX > 0) {
-        particlesMesh.rotation.x += (mouseY * 0.00005);
-        particlesMesh.rotation.y += (mouseX * 0.00005);
-    }
-    renderer.render(scene, camera);
+scene.add(particlesMesh)
+
+camera.position.z=3
+
+function animate(){
+
+requestAnimationFrame(animate)
+
+particlesMesh.rotation.y+=0.001
+
+renderer.render(scene,camera)
+
 }
-animate();
 
-// 2. Custom Cursor Logic
-const dot = document.querySelector('.cursor-dot');
-const outline = document.querySelector('.cursor-outline');
+animate()
 
-window.addEventListener('mousemove', (e) => {
-    gsap.to(dot, { x: e.clientX, y: e.clientY, duration: 0.1 });
-    gsap.to(outline, { x: e.clientX, y: e.clientY, duration: 0.3 });
-});
+const dot=document.querySelector('.cursor-dot')
+const outline=document.querySelector('.cursor-outline')
 
-// 3. GSAP Animations
-gsap.registerPlugin(ScrollTrigger);
+window.addEventListener('mousemove',e=>{
 
-// Reveal Text Animation
-gsap.from(".reveal-text", {
-    y: 100,
-    opacity: 0,
-    duration: 1.2,
-    ease: "power4.out",
-    stagger: 0.2
-});
+gsap.to(dot,{
+x:e.clientX,
+y:e.clientY,
+duration:0.1
+})
 
-gsap.from(".fade-up", {
-    y: 50,
-    opacity: 0,
-    duration: 1,
-    delay: 0.5,
-    stagger: 0.2
-});
+gsap.to(outline,{
+x:e.clientX,
+y:e.clientY,
+duration:0.3
+})
 
-// Service Cards Scroll Animation
-gsap.from(".service-card", {
-    scrollTrigger: {
-        trigger: ".services-grid",
-        start: "top 80%"
-    },
-    y: 60,
-    opacity: 0,
-    duration: 0.8,
-    stagger: 0.15,
-    ease: "power2.out"
-});
+})
+
+const themeBtn=document.getElementById("theme-toggle")
+
+themeBtn.addEventListener("click",()=>{
+document.body.classList.toggle("light-mode")
+})
+
+gsap.registerPlugin(ScrollTrigger)
+
+gsap.from(".reveal-text",{
+y:80,
+opacity:0,
+duration:1.2
+})
+
+gsap.from(".service-card",{
+scrollTrigger:{
+trigger:".services",
+start:"top 80%"
+},
+y:60,
+opacity:0,
+duration:0.8,
+stagger:0.2
+})
