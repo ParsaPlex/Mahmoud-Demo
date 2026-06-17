@@ -1,98 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NexCore | Next-Gen Network Solutions</title>
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <!-- Libraries -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.155.0/three.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Raman Network | Network Infrastructure</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.155.0/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
 </head>
-<body class="dark-mode">
 
-    <!-- Custom Animated Cursor -->
-    <div class="cursor-dot"></div>
-    <div class="cursor-outline"></div>
+<body>
 
-    <!-- Background Canvas for Three.js -->
-    <canvas id="bg-canvas"></canvas>
+<div class="cursor-dot"></div>
+<div class="cursor-outline"></div>
 
-    <header>
-        <nav class="container">
-            <div class="logo">NEX<span>CORE</span></div>
-            <ul class="nav-links">
-                <li><a href="#services">Services</a></li>
-                <li><a href="#solutions">Solutions</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="header-cta">
-                <button id="theme-toggle">🌓</button>
-                <a href="#" class="btn-minimal">Start Project</a>
-            </div>
-        </nav>
-    </header>
+<canvas id="bg-canvas"></canvas>
 
-    <main>
-        <!-- Hero Section -->
-        <section class="hero container">
-            <div class="hero-content">
-                <h1 class="reveal-text">Architecting the <br><span class="accent-text">Future of Connectivity</span></h1>
-                <p class="fade-up">Enterprise-grade network infrastructure designed for maximum uptime, security, and global scalability.</p>
-                <div class="hero-btns fade-up">
-                    <a href="#services" class="btn-main">View Infrastructure</a>
-                    <a href="#" class="btn-secondary">Technical Specs</a>
-                </div>
-            </div>
-        </section>
+<header class="header">
 
-        <!-- Services Section -->
-        <section id="services" class="services container">
-            <div class="section-header">
-                <h2 class="reveal-text">Core Expertise</h2>
-            </div>
-            <div class="services-grid">
-                <!-- Service 1 -->
-                <div class="service-card">
-                    <div class="card-icon">⚡</div>
-                    <h3>Server Configuration</h3>
-                    <p>Professional setup for Windows & Linux environments. AD, DNS/DHCP, and RAID monitoring for zero-loss operations.</p>
-                </div>
-                <!-- Service 2 -->
-                <div class="service-card">
-                    <div class="card-icon">📦</div>
-                    <h3>Hardware Consulting</h3>
-                    <p>Strategic procurement and technical analysis for Cisco, MikroTik, and Ubiquiti ecosystems.</p>
-                </div>
-                <!-- Service 3 -->
-                <div class="service-card">
-                    <div class="card-icon">🌐</div>
-                    <h3>Internal Networks</h3>
-                    <p>Topology design (Star, Mesh, Hybrid) with professional cabling, rack installation, and full documentation.</p>
-                </div>
-                <!-- Service 4 -->
-                <div class="service-card">
-                    <div class="card-icon">🛡️</div>
-                    <h3>Branch Connectivity</h3>
-                    <p>Secure Site-to-Site VPNs using MPLS, IPsec, and L2TP for seamless office synchronization.</p>
-                </div>
-            </div>
-        </section>
-    </main>
+<nav class="nav container">
 
-    <footer class="container">
-        <div class="footer-content">
-            <p>&copy; 2026 NEXCORE SYSTEMS. CRAFTED BY PARSA.</p>
-            <div class="footer-socials">
-                <a href="#">LinkedIn</a>
-                <a href="#">GitHub</a>
-            </div>
-        </div>
-    </footer>
+<div class="logo">
+RAMAN<span>NETWORK</span>
+</div>
 
-    <script src="main.js"></script>
+<ul class="nav-links">
+<li><a href="#services">Services</a></li>
+<li><a href="#about">Solutions</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+<div class="nav-actions">
+
+<button id="theme-toggle" class="theme-toggle">
+
+<span class="sun">
+<svg viewBox="0 0 24 24">
+<circle cx="12" cy="12" r="5"></circle>
+</svg>
+</span>
+
+<span class="moon">
+<svg viewBox="0 0 24 24">
+<path d="M21 12.79A9 9 0 0111.21 3
+7 7 0 0012 21a9 9 0 009-8.21z"></path>
+</svg>
+</span>
+
+</button>
+
+</div>
+
+</nav>
+</header>
+
+<main>
+
+<section class="hero container">
+
+<div class="hero-content">
+
+<h1 class="reveal-text">
+Enterprise<br>
+<span class="accent-text">Network Infrastructure</span>
+</h1>
+
+<p class="fade-up">
+Advanced server deployment, secure network design and professional connectivity solutions for modern businesses.
+</p>
+
+<div class="hero-btns fade-up">
+<a href="#services" class="btn-main">Explore Services</a>
+</div>
+
+<div class="hero-services">
+
+<div class="hero-service">⚡ Server Deployment</div>
+<div class="hero-service">🧩 Network Design</div>
+<div class="hero-service">🌐 Branch VPN</div>
+<div class="hero-service">📦 Hardware Consulting</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="services" class="services container">
+
+<div class="section-header">
+<h2 class="reveal-text">Professional Network Services</h2>
+<p>Enterprise infrastructure solutions</p>
+</div>
+
+<div class="services-grid">
+
+<div class="service-card">
+<div class="card-icon">🔧</div>
+<h3>Server Setup & Configuration</h3>
+<p>
+Installation of Windows Server and Linux,
+Active Directory deployment,
+DNS and DHCP configuration,
+RAID setup and monitoring.
+</p>
+</div>
+
+<div class="service-card">
+<div class="card-icon">📦</div>
+<h3>Network Hardware Consulting</h3>
+<p>
+Infrastructure analysis,
+equipment comparison between
+Cisco, MikroTik and Ubiquiti,
+and optimized procurement planning.
+</p>
+</div>
+
+<div class="service-card">
+<div class="card-icon">🧩</div>
+<h3>Internal Network Design</h3>
+<p>
+Advanced topology design
+Star, Mesh and Hybrid networks,
+structured cabling,
+rack installation and maintenance.
+</p>
+</div>
+
+<div class="service-card">
+<div class="card-icon">🌐</div>
+<h3>Branch Connectivity</h3>
+<p>
+Secure communication between offices
+using Site‑to‑Site VPN,
+MPLS architecture,
+IPsec and L2TP protocols.
+</p>
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+<footer class="footer">
+
+<div class="container footer-grid">
+
+<div class="footer-brand">
+<h3>RAMAN NETWORK</h3>
+<p>
+Enterprise network infrastructure,
+server deployment and secure connectivity solutions.
+</p>
+</div>
+
+<div class="footer-links">
+<h4>Services</h4>
+<a href="#">Server Deployment</a>
+<a href="#">Network Design</a>
+<a href="#">VPN Connectivity</a>
+<a href="#">Hardware Consulting</a>
+</div>
+
+<div class="footer-links">
+<h4>Company</h4>
+<a href="#">About</a>
+<a href="#">Projects</a>
+<a href="#">Contact</a>
+</div>
+
+<div class="footer-contact">
+<h4>Contact</h4>
+<p>Email: info@ramannetwork.com</p>
+<p>Infrastructure Solutions</p>
+</div>
+
+</div>
+
+<div class="footer-bottom">
+<p>© 2026 Raman Network</p>
+<p>Designed and coded by ParsaPlex</p>
+</div>
+
+</footer>
+
+<script src="main.js"></script>
+
 </body>
 </html>
