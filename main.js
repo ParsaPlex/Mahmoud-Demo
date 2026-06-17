@@ -1,102 +1,69 @@
-const canvas=document.querySelector('#bg-canvas')
+gsap.registerPlugin(ScrollTrigger)
 
+/* Three.js Background (UNCHANGED) */
+
+const canvas=document.querySelector("#bg-canvas")
 const scene=new THREE.Scene()
-
-const camera=new THREE.PerspectiveCamera(
-75,
-window.innerWidth/window.innerHeight,
-0.1,
-1000
-)
-
-const renderer=new THREE.WebGLRenderer({
-canvas,
-alpha:true
-})
-
+const camera=new THREE.PerspectiveCamera(75,window.innerWidth/window.innerHeight,0.1,1000)
+const renderer=new THREE.WebGLRenderer({canvas,alpha:true})
 renderer.setSize(window.innerWidth,window.innerHeight)
 
-const particlesGeometry=new THREE.BufferGeometry()
+const geometry=new THREE.BufferGeometry()
+const count=2000
+const positions=new Float32Array(count*3)
 
-const particlesCount=2000
-
-const posArray=new Float32Array(particlesCount*3)
-
-for(let i=0;i<particlesCount*3;i++){
-posArray[i]=(Math.random()-0.5)*10
+for(let i=0;i<count*3;i++){
+positions[i]=(Math.random()-0.5)*10
 }
 
-particlesGeometry.setAttribute(
-'position',
-new THREE.BufferAttribute(posArray,3)
-)
+geometry.setAttribute("position",new THREE.BufferAttribute(positions,3))
 
 const material=new THREE.PointsMaterial({
 size:0.005,
 color:0xe3a617
 })
 
-const particlesMesh=new THREE.Points(
-particlesGeometry,
-material
-)
-
-scene.add(particlesMesh)
-
+const mesh=new THREE.Points(geometry,material)
+scene.add(mesh)
 camera.position.z=3
 
 function animate(){
-
 requestAnimationFrame(animate)
-
-particlesMesh.rotation.y+=0.001
-
+mesh.rotation.y+=0.001
 renderer.render(scene,camera)
-
 }
-
 animate()
 
-const dot=document.querySelector('.cursor-dot')
-const outline=document.querySelector('.cursor-outline')
+/* Cursor (UNCHANGED) */
 
-window.addEventListener('mousemove',e=>{
+const dot=document.querySelector(".cursor-dot")
+const outline=document.querySelector(".cursor-outline")
 
-gsap.to(dot,{
-x:e.clientX,
-y:e.clientY,
-duration:0.1
+window.addEventListener("mousemove",(e)=>{
+gsap.to(dot,{x:e.clientX,y:e.clientY,duration:0.1})
+gsap.to(outline,{x:e.clientX,y:e.clientY,duration:0.3})
 })
 
-gsap.to(outline,{
-x:e.clientX,
-y:e.clientY,
-duration:0.3
-})
+/* Dark Mode */
 
-})
+const toggle=document.getElementById("theme-toggle")
 
-const themeBtn=document.getElementById("theme-toggle")
-
-themeBtn.addEventListener("click",()=>{
+toggle.onclick=()=>{
 document.body.classList.toggle("light-mode")
-})
+}
 
-gsap.registerPlugin(ScrollTrigger)
+/* Animations */
 
-gsap.from(".reveal-text",{
-y:80,
+gsap.from(".hero h1",{y:60,opacity:0,duration:1})
+gsap.from(".hero p",{y:40,opacity:0,delay:0.3,duration:1})
+
+gsap.from(".service-box",{
 opacity:0,
-duration:1.2
-})
-
-gsap.from(".service-card",{
+y:50,
+duration:1,
+stagger:0.2,
 scrollTrigger:{
 trigger:".services",
 start:"top 80%"
-},
-y:60,
-opacity:0,
-duration:0.8,
-stagger:0.2
+}
 })
